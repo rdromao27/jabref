@@ -12,7 +12,8 @@ import org.kordamp.ikonli.Ikon;
  * @see <a href="https://github.com/JabRef/jabref/wiki/Custom-SVG-Icons-for-JabRef">Tutorial on our Wiki</a>
  * @see <a href="https://materialdesignicons.com/custom">Material Design Icon custom page</a>
  */
-public enum JabRefMaterialDesignIcon implements Ikon {
+public enum
+JabRefMaterialDesignIcon implements Ikon {
 
     TEX_STUDIO("jab-texstudio", '\ue900'),
     TEX_MAKER("jab-textmaker", '\ue901'),
@@ -29,7 +30,6 @@ public enum JabRefMaterialDesignIcon implements Ikon {
     SET_ALL("jab-setall", '\ue90c'),
     VSCODE("jab-vsvode", '\ue90d'),
     CANCEL("jab-cancel", '\ue90e');
-
     private String description;
     private int code;
 

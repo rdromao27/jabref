@@ -1268,6 +1268,16 @@ public class JabRefFrame extends BorderPane {
         return globalSearchBar;
     }
 
+    //Added
+    public void changeGlobalSearchBarSearchField(String text) {
+    globalSearchBar.setSearchField(text);
+    }
+
+    //Added
+    public void performSearch() {
+        globalSearchBar.performSearch();
+    }
+
     public CountingUndoManager getUndoManager() {
         return undoManager;
     }

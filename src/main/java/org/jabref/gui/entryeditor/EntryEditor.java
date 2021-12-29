@@ -30,6 +30,9 @@ import org.jabref.gui.DialogService;
 import org.jabref.gui.Globals;
 import org.jabref.gui.LibraryTab;
 import org.jabref.gui.StateManager;
+import org.jabref.gui.actions.GetCoauthorsNetworkAction;
+import org.jabref.gui.actions.SearchCoauthorsCreationsAction;
+import org.jabref.gui.actions.SearchDocsFromSameYearAction;
 import org.jabref.gui.citationkeypattern.GenerateCitationKeySingleAction;
 import org.jabref.gui.entryeditor.fileannotationtab.FileAnnotationTab;
 import org.jabref.gui.entryeditor.fileannotationtab.FulltextSearchResultsTab;
@@ -103,11 +106,13 @@ public class EntryEditor extends BorderPane {
     @Inject private FileUpdateMonitor fileMonitor;
     @Inject private CountingUndoManager undoManager;
     private final List<EntryEditorTab> entryEditorTabs = new LinkedList<>();
+    //Added
+    private LibraryTab librayTab;
 
     public EntryEditor(LibraryTab libraryTab, ExternalFileTypes externalFileTypes) {
         this.libraryTab = libraryTab;
         this.databaseContext = libraryTab.getBibDatabaseContext();
-
+        this.librayTab = libraryTab;
         ViewLoader.view(this)
                   .root(this)
                   .load();
@@ -215,8 +220,26 @@ public class EntryEditor extends BorderPane {
     }
 
     @FXML
+    private void getCoauthorsNetwork() {
+        GetCoauthorsNetworkAction action = new GetCoauthorsNetworkAction(entry,libraryTab,dialogService);
+        action.execute();
+    }
+
+    @FXML
+    private void searchDocsFromSameYear() {
+        SearchDocsFromSameYearAction action = new SearchDocsFromSameYearAction(entry,libraryTab,dialogService);
+        action.execute();
+    }
+
+    @FXML
+    private void searchCoauthorsCreationsButton() {
+        SearchCoauthorsCreationsAction action = new SearchCoauthorsCreationsAction(entry,libraryTab,dialogService);
+        action.execute();
+    }
+
+    @FXML
     void generateCiteKeyButton() {
-        GenerateCitationKeySingleAction action = new GenerateCitationKeySingleAction(getEntry(), databaseContext,
+        GenerateCitationKeySingleAction action = new GenerateCitationKeySingleAction(entry, databaseContext,
                 dialogService, preferencesService, undoManager);
         action.execute();
     }

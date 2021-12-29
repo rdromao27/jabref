@@ -8,6 +8,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import javafx.collections.ObservableList;
 import org.jabref.architecture.AllowedToUseLogic;
 import org.jabref.gui.LibraryTab;
 import org.jabref.logic.shared.DatabaseLocation;

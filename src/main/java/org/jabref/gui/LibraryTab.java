@@ -9,9 +9,11 @@ import java.util.Objects;
 import java.util.Optional;
 
 import javafx.application.Platform;
+import javafx.beans.Observable;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
 import javafx.geometry.Orientation;
 import javafx.scene.Node;
 import javafx.scene.control.ProgressIndicator;
@@ -371,6 +373,16 @@ public class LibraryTab extends Tab {
         return frame;
     }
 
+    //Added
+    public void changeGlobalSearchBarSearchField(String text) {
+        frame.changeGlobalSearchBarSearchField(text);
+    }
+
+    //Added
+    public void performSearch() {
+        frame.performSearch();
+    }
+
     /**
      * Removes the selected entries from the database
      *
@@ -631,6 +643,11 @@ public class LibraryTab extends Tab {
 
     public BibDatabase getDatabase() {
         return bibDatabaseContext.getDatabase();
+    }
+
+    //Added
+    public List<BibEntry> getEntries() {
+        return bibDatabaseContext.getEntries();
     }
 
     private boolean showDeleteConfirmationDialog(int numberOfEntries) {

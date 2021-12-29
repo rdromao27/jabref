@@ -201,6 +201,11 @@ public class GlobalSearchBar extends HBox {
                 query.isGrammarBasedSearch());
     }
 
+    //Added
+    public void setSearchField(String text) {
+    searchField.setText(text);
+    }
+
     private void initSearchModifierButtons() {
         regularExpressionButton.setSelected(searchPreferences.isRegularExpression());
         regularExpressionButton.setTooltip(new Tooltip(Localization.lang("regular expression")));

@@ -679,6 +679,32 @@ public class BibEntry implements Cloneable {
     }
 
     /**
+     * Returns the coauthor of the given BibTex entry
+     * @return an String containing the coauthors of a BibTeX entry in case it exists, otherwise return an empty String.
+     */
+    public String getAuthorField() {
+        return getField(StandardField.AUTHOR).orElse("");
+    }
+
+    /**
+     * Returns a array with all coauthor of this entry
+     * @return an array of Strings containing the coauthors of a BibTeX entry in case it exists, otherwise return an empty vector.
+     */
+    public String[] getAuthorFieldDecomposed() {
+        return getAuthorField().split(" and ");
+    }
+
+    /**
+     * Returns the year of the given BibTex entry
+     * @return an Optional containing the year of a BibTeX entry in case it exists, otherwise return an empty Optional.
+     */
+    public String getYearField() {
+        return getField(StandardField.YEAR).orElse("");
+    }
+
+
+
+    /**
      * Will return the publication date of the given bibtex entry conforming to ISO 8601, i.e. either YYYY or YYYY-MM.
      *
      * @return will return the publication date of the entry or null if no year was found.

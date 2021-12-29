@@ -32,6 +32,30 @@
                 </Label>
             </Group>
             <Pane prefHeight="10" VBox.vgrow="ALWAYS"/>
+            <Button fx:id="getCoauthorsNetwork" styleClass="icon-button,narrow" onAction="#getCoauthorsNetwork">
+                <graphic>
+                    <JabRefIconView glyph="WWW"/>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Search Coauthors Network"/>
+                </tooltip>
+            </Button>
+            <Button fx:id="searchDocsFromSameYear" styleClass="icon-button,narrow" onAction="#searchDocsFromSameYear">
+                <graphic>
+                    <JabRefIconView glyph="SEARCH"/>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Search Creations From Same Year"/>
+                </tooltip>
+            </Button>
+            <Button fx:id="searchCoauthorsCreationsButton" styleClass="icon-button,narrow" onAction="#searchCoauthorsCreationsButton">
+                <graphic>
+                    <JabRefIconView glyph="SEARCH"/>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Search Coauthors Creations"/>
+                </tooltip>
+            </Button>
             <Button fx:id="typeChangeButton" styleClass="icon-button,narrow">
                 <graphic>
                     <JabRefIconView glyph="ENTRY_TYPE"/>

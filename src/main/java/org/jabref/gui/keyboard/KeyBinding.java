@@ -21,7 +21,6 @@ public enum KeyBinding {
     EDITOR_KILL_LINE("Remove all characters caret to end of line", Localization.lang("Remove line after caret"), "", KeyBindingCategory.EDITOR),
     EDITOR_KILL_WORD("Remove characters until next word", Localization.lang("Remove characters until next word"), "", KeyBindingCategory.EDITOR),
     EDITOR_KILL_WORD_BACKWARD("Characters until previous word", Localization.lang("Remove the current word backwards"), "", KeyBindingCategory.EDITOR),
-
     ABBREVIATE("Abbreviate", Localization.lang("Abbreviate journal names"), "ctrl+alt+A", KeyBindingCategory.TOOLS),
     AUTOGENERATE_CITATION_KEYS("Autogenerate citation keys", Localization.lang("Autogenerate citation keys"), "ctrl+G", KeyBindingCategory.QUALITY),
     ACCEPT("Accept", Localization.lang("Accept"), "ctrl+ENTER", KeyBindingCategory.EDIT),
@@ -110,7 +109,11 @@ public enum KeyBinding {
     CLEAR_SEARCH("Clear search", Localization.lang("Clear search"), "ESCAPE", KeyBindingCategory.SEARCH),
     CLEAR_READ_STATUS("Clear read status", Localization.lang("Clear read status"), "", KeyBindingCategory.EDIT),
     READ("Set read status to read", Localization.lang("Set read status to read"), "", KeyBindingCategory.EDIT),
-    SKIMMED("Set read status to skimmed", Localization.lang("Set read status to skimmed"), "", KeyBindingCategory.EDIT);
+    SKIMMED("Set read status to skimmed", Localization.lang("Set read status to skimmed"), "", KeyBindingCategory.EDIT),
+
+    //Added
+    SEARCH_COAUTHOR_CREATIONS("Search Coauthors Creations", Localization.lang("Search Coauthors Creations"),"ctrl+shift+Q", KeyBindingCategory.SEARCH);
+
 
     private final String constant;
     private final String localization;

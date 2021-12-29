@@ -174,7 +174,10 @@ public enum StandardActions implements Action {
     EDIT_LIST(Localization.lang("Edit"), IconTheme.JabRefIcons.EDIT),
     VIEW_LIST(Localization.lang("View"), IconTheme.JabRefIcons.FILE),
     REMOVE_LIST(Localization.lang("Remove"), IconTheme.JabRefIcons.REMOVE),
-    RELOAD_LIST(Localization.lang("Reload"), IconTheme.JabRefIcons.REFRESH);
+    RELOAD_LIST(Localization.lang("Reload"), IconTheme.JabRefIcons.REFRESH),
+
+    //Added
+    SEARCH_COAUTHOR_CREATIONS_ACTION(Localization.lang("Search Coauthor Creations"),KeyBinding.SEARCH_COAUTHOR_CREATIONS);
 
     private final String text;
     private final String description;
